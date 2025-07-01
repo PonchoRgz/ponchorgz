@@ -9,21 +9,21 @@
     <meta name="theme-color" content="#808000">
     <meta property="og:title" content="Poncho Rodríguez">
     <meta property="og:description" content="Connecting stakeholders and driving cross-functional success in the tech industry">
-    <meta property="og:image" content="assets/images/profile.jpg">
+    <meta property="og:image" content="assets/images/profile.jpg?v=2">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Poncho Rodríguez">
     <meta name="twitter:description" content="Connecting stakeholders and driving cross-functional success in the tech industry">
-    <meta name="twitter:image" content="assets/images/profile.jpg">
+    <meta name="twitter:image" content="assets/images/profile.jpg?v=2">
 
     <title>Poncho Rodríguez</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💼</text></svg>">
+    <link rel="icon" type="image/png" href="assets/images/poncho_rodriguez_logo_rounded.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="assets/images/profile.jpg" as="image">
+    <link rel="preload" href="assets/images/profile.jpg?v=2" as="image">
     <link rel="preload" href="css/output.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     
@@ -44,15 +44,15 @@
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#" class="social-icon">
+                <a href="https://www.linkedin.com/in/alfonsorgz/" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin text-lg text-gray-400 dark:text-gray-500"></i>
                 </a>
-                <a href="#" class="social-icon">
+                <a href="https://x.com/PonchoRgz" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <svg class="w-4 h-4 text-gray-400 dark:text-gray-500" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404Z"/>
                     </svg>
                 </a>
-                <a href="#" class="social-icon">
+                <a href="mailto:poncho.charlie@gmail.com" class="social-icon">
                     <i class="fas fa-envelope text-lg text-gray-400 dark:text-gray-500"></i>
                 </a>
                 <button id="theme-toggle" class="ml-4 p-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center gap-2">
@@ -70,15 +70,15 @@
                         </button>
                     </div>
                     <div class="flex flex-col items-center space-y-6 mt-8">
-                        <a href="#" class="social-icon">
+                        <a href="https://www.linkedin.com/in/alfonsorgz/" class="social-icon" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin text-4xl text-gray-400 dark:text-gray-500"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="https://x.com/PonchoRgz" class="social-icon" target="_blank" rel="noopener noreferrer">
                             <svg class="w-8 h-8 text-gray-400 dark:text-gray-500" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404Z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="mailto:poncho.charlie@gmail.com" class="social-icon">
                             <i class="fas fa-envelope text-4xl text-gray-400 dark:text-gray-500"></i>
                         </a>
                     </div>
@@ -91,7 +91,7 @@
     <section class="min-h-screen flex items-center justify-center pt-20">
         <div class="container mx-auto px-4 py-16 text-center">
             <div class="profile-image-container">
-                <img src="assets/images/profile.jpg" 
+                <img src="assets/images/profile.jpg?v=2" 
                      alt="Poncho Rodríguez profile picture" 
                      class="profile-image w-full h-full object-cover"
                      width="192"
@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#contact" class="btn-primary">Get in Touch</a>
+            <a href="#contact" class="btn-primary">Get in touch</a>
         </div>
     </section>
 
@@ -249,25 +249,14 @@
 
         <!-- Contact Section -->
         <section id="contact" class="mb-16 fade-in">
-            <h2 class="section-title">Contact</h2>
-            <div class="max-w-2xl mx-auto">
-                <form id="contact-form" class="space-y-6 max-w-xl mx-auto">
-                    <div class="w-full">
-                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="form-input w-full px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700" required>
-                    </div>
-                    <div class="w-full">
-                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="form-input w-full px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700" required>
-                    </div>
-                    <div class="w-full">
-                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="form-input w-full px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary w-full">
-                        <span class="submit-text">Send Message</span>
-                    </button>
-                </form>
+            <h2 class="section-title">Get in touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                    I always love to hear about new ideas and projects. If you're tackling a product or growth challenge, or have any queries, <a href="mailto:poncho.charlie@gmail.com" class="text-primary-light dark:text-primary-dark hover:underline">send me an email</a> or <a href="https://x.com/PonchoRgz" class="text-primary-light dark:text-primary-dark hover:underline" target="_blank" rel="noopener noreferrer">follow me on X</a>.
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    Will be happy to chat!
+                </p>
             </div>
         </section>
     </main>

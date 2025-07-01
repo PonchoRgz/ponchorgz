@@ -10,8 +10,8 @@ module.exports = {
           card: '#1A2634'   // Slightly lighter navy for cards
         },
         primary: {
-          light: '#87994D', // Olive green
-          dark: '#5C6B35'   // Darker olive for hover
+          light: '#3B82F6', // Modern blue
+          dark: '#2563EB'   // Darker blue for hover
         },
         accent: {
           light: '#8B4513', // Earth brown
