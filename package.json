@@ -13,8 +13,9 @@
     "test:lighthouse": "lighthouse http://localhost:8080 --output=html --output-path=./lighthouse-report.html --view",
     "test:a11y": "pa11y http://localhost:8080 --reporter html > accessibility-report.html",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d . -b main"
   },
+  "homepage": "https://ponchorgz.github.io/ponchorgz",
   "dependencies": {
     "tailwindcss": "^3.4.1"
   },
