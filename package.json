@@ -1,0 +1,30 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website for Sr Product Operations Manager",
+  "scripts": {
+    "dev": "concurrently \"npm run watch:css\" \"live-server src\"",
+    "build": "npm run build:css && npm run build:js && npm run optimize:html",
+    "build:css": "tailwindcss -i src/css/styles.css -o src/css/output.css --minify",
+    "build:js": "uglifyjs src/js/main.js -o src/js/main.min.js",
+    "watch:css": "tailwindcss -i src/css/styles.css -o src/css/output.css --watch",
+    "optimize:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true src/index.html -o src/index.min.html",
+    "test": "npm run test:lighthouse && npm run test:a11y",
+    "test:lighthouse": "lighthouse http://localhost:8080 --output=html --output-path=./lighthouse-report.html --view",
+    "test:a11y": "pa11y http://localhost:8080 --reporter html > accessibility-report.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d src"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.1.1",
+    "html-minifier": "^4.0.0",
+    "lighthouse": "^11.6.0",
+    "live-server": "^1.2.2",
+    "pa11y": "^6.2.3",
+    "uglify-js": "^3.17.4"
+  }
+}

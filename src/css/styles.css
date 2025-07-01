@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation Keyframes */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Custom styles */
+@layer base {
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        @apply bg-white dark:bg-background-dark text-black dark:text-white transition-colors duration-300;
+    }
+
+    /* Theme transition for all color properties */
+    *, *::before, *::after {
+        @apply transition-colors duration-300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight text-black dark:text-white;
+    }
+
+    p {
+        @apply leading-relaxed text-gray-600 dark:text-gray-300;
+    }
+
+    a {
+        @apply text-black dark:text-white hover:text-primary-light dark:hover:text-primary-light transition-colors duration-300;
+    }
+}
+
+@layer components {
+    /* Loading State */
+    .loading {
+        background: linear-gradient(90deg, 
+            rgba(var(--loading-color), 0.1) 25%,
+            rgba(var(--loading-color), 0.2) 37%,
+            rgba(var(--loading-color), 0.1) 63%
+        );
+        background-size: 400% 100%;
+        animation: shimmer 1.4s infinite;
+    }
+
+    .light .loading {
+        --loading-color: 156, 163, 175;  /* gray-400 */
+    }
+
+    .dark .loading {
+        --loading-color: 75, 85, 99;     /* gray-600 */
+    }
+
+    /* Text Appearance Animations */
+    .animate-text-reveal {
+        opacity: 0;
+        animation: slideUpFade 0.6s ease-out forwards;
+    }
+
+    .animate-text-reveal-delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-text-reveal-delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    /* Navigation Links */
+    .nav-link {
+        @apply px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white relative overflow-hidden;
+    }
+
+    .nav-link::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light transition-all duration-300 ease-out;
+    }
+
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+
+    /* Buttons */
+    .btn {
+        @apply px-6 py-2 rounded-lg transition-all duration-300 font-medium relative overflow-hidden;
+    }
+
+    .btn::before {
+        content: '';
+        @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+    }
+
+    .btn:hover::before {
+        @apply opacity-10;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .btn-primary {
+        @apply px-6 py-3 bg-primary-light text-white rounded-lg hover:bg-primary-dark transition-all duration-300;
+    }
+
+    /* Cards */
+    .card {
+        @apply bg-white dark:bg-background-card rounded-lg p-6 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-xl;
+        transform: translateY(-4px) translateZ(0);
+    }
+
+    /* Section Titles */
+    .section-title {
+        @apply text-3xl font-bold text-black dark:text-white mb-8 relative;
+        opacity: 0;
+        animation: slideDownFade 0.6s ease-out forwards;
+    }
+
+    .section-title::after {
+        content: '';
+        @apply block w-20 h-1 bg-primary-light dark:bg-primary-dark mt-4 transition-all duration-500 ease-out;
+    }
+
+    .section-title:hover::after {
+        @apply w-32;
+    }
+
+    /* Timeline */
+    .timeline-item {
+        @apply relative pl-8 pb-8 border-l-2 border-primary-light dark:border-primary-dark;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideUpFade 0.6s ease-out forwards;
+    }
+
+    .timeline-item::before {
+        content: '';
+        @apply absolute w-4 h-4 bg-primary-light dark:bg-primary-dark rounded-full -left-[9px] top-0 transition-all duration-300;
+    }
+
+    .timeline-item:hover::before {
+        @apply scale-125 shadow-lg;
+        transform: scale(1.25) translateZ(0);
+    }
+
+    /* Profile Image */
+    .profile-image-container {
+        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary-light dark:ring-primary-dark transition-all duration-300;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-image-container img {
+        @apply w-full h-full object-cover transition-transform duration-700 ease-out;
+        transform: scale(2.2);
+        object-position: 50% 70%;  /* Adjusted vertical position to 70% */
+    }
+
+    .profile-image-container:hover {
+        @apply ring-8 transform scale-105;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-image-container:hover img {
+        transform: scale(2.3);
+    }
+
+    .profile-image {
+        @apply rounded-full;
+    }
+
+    /* Blog Search */
+    .search-input {
+        @apply transition-all duration-300 ease-out rounded-lg;
+    }
+
+    .search-input:focus {
+        @apply ring-2 ring-primary-light dark:ring-primary-dark ring-opacity-50 transform scale-[1.02];
+    }
+
+    /* Form Inputs */
+    .form-input {
+        @apply transition-all duration-200 ease-out rounded-lg text-gray-800 dark:text-white;
+    }
+
+    .form-input:focus {
+        @apply ring-2 ring-primary-light dark:ring-primary-dark ring-opacity-50 transform scale-[1.01] border-primary-light dark:border-primary-dark outline-none;
+    }
+
+    .form-input::placeholder {
+        @apply text-gray-400 dark:text-gray-500;
+    }
+
+    /* Social Icons */
+    .social-icon {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    .social-icon:hover {
+        @apply transform scale-125;
+    }
+}
+
+/* Grid System */
+.grid-auto-fit {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    @apply scroll-pt-20;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline styles */
+.timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary-light dark:border-primary-dark transition-all duration-300;
+}
+
+.timeline-item::before {
+    content: '';
+    @apply absolute w-4 h-4 bg-primary-light dark:bg-primary-dark rounded-full -left-[9px] top-0 transition-all duration-300;
+}
+
+.timeline-item:hover::before {
+    @apply scale-125 shadow-lg;
+}
+
+/* Project card hover effect */
+.project-card {
+    @apply relative overflow-hidden;
+}
+
+.project-card-content {
+    @apply transform transition-all duration-300;
+}
+
+.project-card:hover .project-card-content {
+    @apply -translate-y-1;
+}
+
+/* Blog post hover effect */
+.blog-post-card {
+    @apply transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-700;
+}
+
+/* Contact form loading state */
+.btn-loading {
+    @apply relative text-transparent;
+}
+
+.btn-loading::after {
+    content: '';
+    @apply absolute inset-0 m-auto w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Theme Transition */
+.theme-transition {
+    @apply transition-all duration-300 ease-out;
+}
+
+/* Theme Toggle */
+#theme-toggle .fa-sun {
+    @apply scale-100 opacity-100 text-orange-400 transition-all duration-300;
+}
+
+#theme-toggle .fa-sun:is(.dark *) {
+    @apply scale-90 opacity-40 text-gray-500;
+}
+
+#theme-toggle .fa-moon {
+    @apply scale-90 opacity-40 text-gray-500 transition-all duration-300;
+}
+
+#theme-toggle .fa-moon:is(.dark *) {
+    @apply scale-100 opacity-100 text-purple-400;
+}
+
+/* Loading Skeleton */
+.skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+} 
