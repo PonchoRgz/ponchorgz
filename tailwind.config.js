@@ -8,7 +8,6 @@ module.exports = {
     extend: {
       colors: {
         primary: '#0066cc',
-        secondary: '#4a5568',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

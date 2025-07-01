@@ -56,7 +56,7 @@
 @layer base {
     body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        @apply bg-white dark:bg-background-dark text-black dark:text-white transition-colors duration-300;
+        @apply bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300;
     }
 
     /* Theme transition for all color properties */
@@ -73,7 +73,7 @@
     }
 
     a {
-        @apply text-black dark:text-white hover:text-primary-light dark:hover:text-primary-light transition-colors duration-300;
+        @apply text-black dark:text-white hover:text-primary dark:hover:text-primary transition-colors duration-300;
     }
 }
 
@@ -118,7 +118,7 @@
 
     .nav-link::after {
         content: '';
-        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-light transition-all duration-300 ease-out;
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out;
     }
 
     .nav-link:hover::after {
@@ -144,12 +144,12 @@
     }
 
     .btn-primary {
-        @apply px-6 py-3 bg-primary-light text-white rounded-lg hover:bg-primary-dark hover:text-white transition-all duration-300;
+        @apply px-6 py-3 bg-primary text-white rounded-lg hover:opacity-90 transition-all duration-300;
     }
 
     /* Cards */
     .card {
-        @apply bg-white dark:bg-background-card rounded-lg p-6 transition-all duration-300;
+        @apply bg-white dark:bg-gray-800 rounded-lg p-6 transition-all duration-300;
     }
 
     .card:hover {
@@ -166,7 +166,7 @@
 
     .section-title::after {
         content: '';
-        @apply block w-20 h-1 bg-primary-light dark:bg-primary-dark mt-4 transition-all duration-500 ease-out;
+        @apply block w-20 h-1 bg-primary dark:bg-primary mt-4 transition-all duration-500 ease-out;
     }
 
     .section-title:hover::after {
@@ -175,7 +175,7 @@
 
     /* Timeline */
     .timeline-item {
-        @apply relative pl-8 pb-8 border-l-2 border-primary-light dark:border-primary-dark;
+        @apply relative pl-8 pb-8 border-l-2 border-primary dark:border-primary;
         opacity: 0;
         transform: translateX(-20px);
         animation: slideUpFade 0.6s ease-out forwards;
@@ -183,7 +183,7 @@
 
     .timeline-item::before {
         content: '';
-        @apply absolute w-4 h-4 bg-primary-light dark:bg-primary-dark rounded-full -left-[9px] top-0 transition-all duration-300;
+        @apply absolute w-4 h-4 bg-primary dark:bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
     }
 
     .timeline-item:hover::before {
@@ -193,7 +193,7 @@
 
     /* Profile Image */
     .profile-image-container {
-        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary-light dark:ring-primary-dark transition-all duration-300;
+        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary dark:ring-primary transition-all duration-300;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
 
@@ -222,7 +222,7 @@
     }
 
     .search-input:focus {
-        @apply ring-2 ring-primary-light dark:ring-primary-dark ring-opacity-50 transform scale-[1.02];
+        @apply ring-2 ring-primary dark:ring-primary ring-opacity-50 transform scale-[1.02];
     }
 
     /* Form Inputs */
@@ -231,7 +231,7 @@
     }
 
     .form-input:focus {
-        @apply ring-2 ring-primary-light dark:ring-primary-dark ring-opacity-50 transform scale-[1.01] border-primary-light dark:border-primary-dark outline-none;
+        @apply ring-2 ring-primary dark:ring-primary ring-opacity-50 transform scale-[1.01] border-primary dark:border-primary outline-none;
     }
 
     .form-input::placeholder {
@@ -274,12 +274,12 @@ html {
 
 /* Timeline styles */
 .timeline-item {
-    @apply relative pl-8 pb-8 border-l-2 border-primary-light dark:border-primary-dark transition-all duration-300;
+    @apply relative pl-8 pb-8 border-l-2 border-primary dark:border-primary transition-all duration-300;
 }
 
 .timeline-item::before {
     content: '';
-    @apply absolute w-4 h-4 bg-primary-light dark:bg-primary-dark rounded-full -left-[9px] top-0 transition-all duration-300;
+    @apply absolute w-4 h-4 bg-primary dark:bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
 }
 
 .timeline-item:hover::before {
