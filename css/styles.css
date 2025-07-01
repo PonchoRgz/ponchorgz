@@ -73,11 +73,20 @@
     }
 
     a {
-        @apply text-black dark:text-white hover:text-primary dark:hover:text-primary transition-colors duration-300;
+        @apply text-primary dark:text-primary hover:opacity-80 transition-colors duration-300;
     }
 }
 
 @layer components {
+    /* Strava Link */
+    .strava-link {
+        @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
+    }
+    
+    .strava-link:hover {
+        color: #FC4C02;
+    }
+
     /* Loading State */
     .loading {
         background: linear-gradient(90deg, 
@@ -113,7 +122,7 @@
 
     /* Navigation Links */
     .nav-link {
-        @apply px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white relative overflow-hidden;
+        @apply px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary relative overflow-hidden;
     }
 
     .nav-link::after {
@@ -144,7 +153,12 @@
     }
 
     .btn-primary {
-        @apply px-6 py-3 bg-primary text-white rounded-lg hover:opacity-90 transition-all duration-300;
+        @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium 
+        text-white dark:text-white
+        bg-primary dark:bg-primary/90 rounded-full
+        shadow-sm hover:shadow-lg hover:bg-primary/90 dark:hover:bg-primary 
+        transform hover:-translate-y-0.5 
+        transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900;
     }
 
     /* Cards */
@@ -157,6 +171,19 @@
         transform: translateY(-4px) translateZ(0);
     }
 
+    .card i {
+        @apply text-primary;
+    }
+
+    .card i.fas {
+        @apply text-primary;
+    }
+
+    /* Icons */
+    .icon-primary {
+        @apply text-primary;
+    }
+
     /* Section Titles */
     .section-title {
         @apply text-3xl font-bold text-black dark:text-white mb-8 relative;
@@ -166,7 +193,7 @@
 
     .section-title::after {
         content: '';
-        @apply block w-20 h-1 bg-primary dark:bg-primary mt-4 transition-all duration-500 ease-out;
+        @apply block w-20 h-1 bg-primary mt-4 transition-all duration-500 ease-out;
     }
 
     .section-title:hover::after {
@@ -175,7 +202,7 @@
 
     /* Timeline */
     .timeline-item {
-        @apply relative pl-8 pb-8 border-l-2 border-primary dark:border-primary;
+        @apply relative pl-8 pb-8 border-l-2 border-primary;
         opacity: 0;
         transform: translateX(-20px);
         animation: slideUpFade 0.6s ease-out forwards;
@@ -183,7 +210,7 @@
 
     .timeline-item::before {
         content: '';
-        @apply absolute w-4 h-4 bg-primary dark:bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
+        @apply absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
     }
 
     .timeline-item:hover::before {
@@ -193,7 +220,7 @@
 
     /* Profile Image */
     .profile-image-container {
-        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary dark:ring-primary transition-all duration-300;
+        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary transition-all duration-300;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
 
@@ -240,11 +267,11 @@
 
     /* Social Icons */
     .social-icon {
-        @apply transition-all duration-300 ease-out;
+        @apply text-primary hover:opacity-80 transition-colors duration-200;
     }
 
     .social-icon:hover {
-        @apply transform scale-125;
+        @apply transform scale-110;
     }
 }
 
