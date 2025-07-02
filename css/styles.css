@@ -77,16 +77,50 @@
     }
 }
 
-@layer components {
-    /* Strava Link */
-    .strava-link {
-        @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
-    }
-    
-    .strava-link:hover {
-        color: #FC4C02;
-    }
+/* Company and Career Links */
+.mercado-libre-text {
+    @apply transition-colors duration-300;
+}
 
+.mercado-libre-text:hover {
+    color: #FFE600; /* Mercado Libre yellow */
+}
+
+.uber-text {
+    @apply transition-colors duration-300;
+}
+
+.uber-text:hover {
+    color: #276EF1; /* Uber blue */
+}
+
+.early-career-text {
+    @apply transition-colors duration-300;
+}
+
+.early-career-text:hover {
+    color: #34A853; /* Professional green */
+}
+
+/* Strava Link */
+.strava-link {
+    @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
+}
+
+.strava-link:hover {
+    color: #FC4C02;
+}
+
+/* Goodreads Link */
+.goodreads-link {
+    @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
+}
+
+.goodreads-link:hover {
+    color: #553B08;
+}
+
+@layer components {
     /* Loading State */
     .loading {
         background: linear-gradient(90deg, 
@@ -271,6 +305,106 @@
     }
 
     .social-icon:hover {
+        @apply transform scale-110;
+    }
+
+    /* Mobile Menu */
+    #mobile-menu {
+        @apply transition-opacity duration-300 ease-in-out;
+    }
+
+    #mobile-menu.hidden {
+        @apply opacity-0;
+    }
+
+    #mobile-menu:not(.hidden) {
+        @apply opacity-100;
+    }
+
+    #mobile-menu .social-icon {
+        @apply transform transition-transform duration-300;
+    }
+
+    #mobile-menu .social-icon:hover {
+        @apply scale-110;
+    }
+
+    /* Theme toggle transitions */
+    #theme-toggle,
+    #mobile-theme-toggle {
+        @apply relative transition-all duration-300;
+    }
+
+    #theme-toggle:hover,
+    #mobile-theme-toggle:hover {
+        @apply transform scale-105;
+    }
+
+    /* Desktop theme toggle */
+    #theme-toggle .fa-sun {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    #theme-toggle .fa-moon {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    .dark #theme-toggle .fa-sun {
+        @apply opacity-50;
+    }
+
+    .dark #theme-toggle .fa-moon {
+        @apply opacity-100;
+    }
+
+    #theme-toggle .fa-sun {
+        @apply opacity-100;
+    }
+
+    #theme-toggle .fa-moon {
+        @apply opacity-50;
+    }
+
+    /* Mobile theme toggle */
+    #mobile-theme-toggle .fa-sun {
+        @apply absolute left-2 transition-all duration-300 ease-out;
+    }
+
+    #mobile-theme-toggle .fa-moon {
+        @apply absolute right-2 transition-all duration-300 ease-out;
+    }
+
+    .dark #mobile-theme-toggle .fa-sun {
+        @apply opacity-50 rotate-180 scale-0;
+    }
+
+    .dark #mobile-theme-toggle .fa-moon {
+        @apply opacity-100 rotate-0 scale-100;
+    }
+
+    #mobile-theme-toggle .fa-sun {
+        @apply opacity-100 rotate-0 scale-100;
+    }
+
+    #mobile-theme-toggle .fa-moon {
+        @apply opacity-50 rotate-180 scale-0;
+    }
+
+    /* Desktop social icons */
+    .hidden.md\:flex .social-icon {
+        @apply transition-transform duration-300;
+    }
+
+    .hidden.md\:flex .social-icon:hover {
+        @apply transform scale-110;
+    }
+
+    /* Mobile social icons */
+    #mobile-menu .social-icon {
+        @apply p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300;
+    }
+
+    #mobile-menu .social-icon:hover {
         @apply transform scale-110;
     }
 }

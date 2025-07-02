@@ -63,24 +63,28 @@
             </div>
             
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50">
+            <div id="mobile-menu" class="hidden fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md z-50">
                 <div class="container mx-auto px-4 py-4">
-                    <div class="flex justify-end">
+                    <div class="flex justify-between items-center">
+                        <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center w-20 h-10 relative">
+                            <i class="fas fa-sun text-sm text-gray-600 dark:text-gray-300"></i>
+                            <i class="fas fa-moon text-sm text-gray-600 dark:text-gray-300"></i>
+                        </button>
                         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200">
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
                         </button>
                     </div>
-                    <div class="flex flex-col items-center space-y-6 mt-8">
-                        <a href="https://www.linkedin.com/in/alfonsorgz/" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin text-4xl text-gray-400 dark:text-gray-500"></i>
+                    <div class="flex flex-col items-center space-y-8 mt-16">
+                        <a href="https://www.linkedin.com/in/alfonsorgz/" class="social-icon p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin text-3xl text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"></i>
                         </a>
-                        <a href="https://x.com/PonchoRgz" class="social-icon" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-8 h-8 text-gray-400 dark:text-gray-500" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://x.com/PonchoRgz" class="social-icon p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-7 h-7 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404Z"/>
                             </svg>
                         </a>
-                        <a href="mailto:poncho.charlie@gmail.com" class="social-icon">
-                            <i class="fas fa-envelope text-4xl text-gray-400 dark:text-gray-500"></i>
+                        <a href="mailto:poncho.charlie@gmail.com" class="social-icon p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+                            <i class="fas fa-envelope text-3xl text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"></i>
                         </a>
                     </div>
                 </div>
@@ -139,7 +143,7 @@
             <h2 class="section-title">Experience</h2>
             <div class="max-w-3xl mx-auto space-y-8">
                 <div class="timeline-item">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Mercado Libre</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white"><span class="mercado-libre-text">Mercado Libre</span></h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">2+ years</p>
                     <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
                         <li>Strategy Manager Mexico</li>
@@ -147,7 +151,7 @@
                     </ul>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Uber</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white"><span class="uber-text">Uber</span></h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">5+ years</p>
                     <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
                         <li>Scaled safety & marketplace features worldwide, aligning Product, Eng, Ops & Legal.</li>
@@ -158,7 +162,7 @@
                     </ul>
                 </div>
                 <div class="timeline-item">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Early career</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white"><span class="early-career-text">Early career</span></h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">6+ years</p>
                     <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
                         <li>Ops leadership, analytics & teaching roles that sharpened my bias for action</li>
@@ -220,7 +224,7 @@
                     <div class="card blog-post-card" data-tags="ai,technology,future">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">AI is Eating the World</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">July 1, 2023</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">October 18, 2018</p>
                             <p class="mb-4">Exploring how artificial intelligence is transforming industries and reshaping our future...</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="px-2 py-1 text-sm bg-gray-100 dark:bg-gray-700 rounded">AI</span>
@@ -254,7 +258,7 @@
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 py-8">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-600 dark:text-gray-300">&copy; 2025 Poncho Rodríguez • <a href="https://www.strava.com/athletes/69223590" class="strava-link" target="_blank" rel="noopener noreferrer">Runner</a> • Mentor • Product Ops Advocate</p>
+            <p class="text-gray-600 dark:text-gray-300">&copy; 2025 Poncho Rodríguez • <a href="https://www.strava.com/athletes/69223590" class="strava-link" target="_blank" rel="noopener noreferrer">Runner</a> • <a href="https://www.goodreads.com/ponchorgz" class="goodreads-link" target="_blank" rel="noopener noreferrer">Reader</a> • Mentor • Product Ops Advocate</p>
         </div>
     </footer>
 

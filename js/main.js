@@ -1,6 +1,7 @@
 // Theme toggle functionality with enhanced transitions
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     const html = document.documentElement;
     
     // Add transition class to html element
@@ -13,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         html.classList.remove('dark');
     }
 
-    // Toggle theme with transition
-    themeToggle.addEventListener('click', () => {
+    // Function to toggle theme
+    function toggleTheme() {
         // Add transition class
         html.classList.add('theme-transition');
         
@@ -28,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             html.classList.remove('theme-transition');
         }, 300);
-    });
+    }
+
+    // Toggle theme with transition
+    themeToggle.addEventListener('click', toggleTheme);
+    mobileThemeToggle.addEventListener('click', toggleTheme);
 
     // Mobile menu functionality with enhanced animations
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -42,14 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isOpen) {
             // Opening menu
             mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('animate-fadeIn');
             document.body.classList.add('overflow-hidden');
+            
+            // Add fade-in animation
+            requestAnimationFrame(() => {
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+            });
         } else {
-            // Closing menu
+            // Closing menu with fade-out animation
             mobileMenu.classList.add('opacity-0');
+            mobileMenu.classList.remove('opacity-100');
+            
+            // Wait for animation to complete before hiding
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('opacity-0');
                 document.body.classList.remove('overflow-hidden');
             }, 300);
         }
