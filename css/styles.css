@@ -300,13 +300,32 @@
     }
 
     /* Social Icons */
-    .social-icon {
-        @apply text-primary hover:opacity-80 transition-colors duration-200;
-    }
+.social-icon {
+    @apply text-primary hover:opacity-80 transition-colors duration-200;
+}
 
-    .social-icon:hover {
-        @apply transform scale-110;
-    }
+.social-icon:hover {
+    @apply transform scale-110;
+}
+
+/* Desktop Social Icons (overlay on profile) */
+.social-icon-overlay {
+    @apply w-10 h-10 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center 
+           shadow-lg backdrop-blur-sm border border-gray-200 dark:border-gray-700
+           hover:bg-white dark:hover:bg-gray-800 hover:scale-110 hover:shadow-xl
+           transition-all duration-300 ease-out;
+}
+
+.social-icon-overlay:hover {
+    @apply text-primary dark:text-primary;
+}
+
+/* Mobile Social Icons (below profile) */
+.social-icon-mobile {
+    @apply w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center
+           hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-110 hover:text-primary dark:hover:text-primary
+           transition-all duration-300 ease-out shadow-sm hover:shadow-md;
+}
 
     /* Mobile Menu */
     #mobile-menu {
