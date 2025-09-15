@@ -95,7 +95,7 @@
 }
 
 .mercado-libre-text:hover {
-    color: #FFE600; /* Mercado Libre yellow */
+    color: #733E24;
 }
 
 .uber-text {
@@ -103,7 +103,7 @@
 }
 
 .uber-text:hover {
-    color: #276EF1; /* Uber blue */
+    color: #733E24;
 }
 
 .early-career-text {
@@ -111,7 +111,7 @@
 }
 
 .early-career-text:hover {
-    color: #34A853; /* Professional green */
+    color: #733E24;
 }
 
 /* Strava Link */
