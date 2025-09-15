@@ -44,15 +44,17 @@ npm run build
 
 ## Deployment
 
-The website is configured for GitHub Pages deployment:
+The site is served directly from the `gh-pages` branch.
 
-1. Update the repository settings:
-   - Go to Settings > Pages
-   - Set source to `gh-pages` branch
+1. Ensure repository settings:
+   - Settings → Pages → Source: `Deploy from a branch`
+   - Branch: `gh-pages`
 
-2. Deploy:
+2. Deploy by pushing to `gh-pages`:
 ```bash
-npm run deploy
+git add -A
+git commit -m "deploy: update site"
+git push origin gh-pages
 ```
 
 ## Scripts
@@ -60,7 +62,7 @@ npm run deploy
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run test` - Run Lighthouse and accessibility tests
-- `npm run deploy` - Deploy to GitHub Pages
+ 
 
 ## Testing
 
