@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation Keyframes */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Custom styles */
+@layer base {
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        @apply bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300;
+    }
+
+    /* Theme transition for all color properties */
+    *, *::before, *::after {
+        @apply transition-colors duration-300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight text-black dark:text-white;
+    }
+
+    /* Aldrich font utility classes */
+    .font-aldrich {
+        font-family: 'Aldrich', monospace;
+    }
+    
+    /* Custom large name size */
+    .name-large {
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+    }
+
+    p {
+        @apply leading-relaxed text-gray-600 dark:text-gray-300;
+    }
+
+    a {
+        @apply text-primary dark:text-primary hover:opacity-80 transition-colors duration-300;
+    }
+}
+
+/* Company and Career Links */
+.mercado-libre-text {
+    @apply transition-colors duration-300;
+}
+
+.mercado-libre-text:hover {
+    color: #733E24;
+}
+
+.uber-text {
+    @apply transition-colors duration-300;
+}
+
+.uber-text:hover {
+    color: #733E24;
+}
+
+.early-career-text {
+    @apply transition-colors duration-300;
+}
+
+.early-career-text:hover {
+    color: #733E24;
+}
+
+/* Strava Link */
+.strava-link {
+    @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
+}
+
+.strava-link:hover {
+    color: #FC4C02;
+}
+
+/* Goodreads Link */
+.goodreads-link {
+    @apply text-gray-600 dark:text-gray-300 transition-colors duration-300;
+}
+
+.goodreads-link:hover {
+    color: #553B08;
+}
+
+@layer components {
+    /* Loading State */
+    .loading {
+        background: linear-gradient(90deg, 
+            rgba(var(--loading-color), 0.1) 25%,
+            rgba(var(--loading-color), 0.2) 37%,
+            rgba(var(--loading-color), 0.1) 63%
+        );
+        background-size: 400% 100%;
+        animation: shimmer 1.4s infinite;
+    }
+
+    .light .loading {
+        --loading-color: 156, 163, 175;  /* gray-400 */
+    }
+
+    .dark .loading {
+        --loading-color: 75, 85, 99;     /* gray-600 */
+    }
+
+    /* Text Appearance Animations */
+    .animate-text-reveal {
+        opacity: 0;
+        animation: slideUpFade 0.6s ease-out forwards;
+    }
+
+    .animate-text-reveal-delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-text-reveal-delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    /* Navigation Links */
+    .nav-link {
+        @apply px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary relative overflow-hidden;
+    }
+
+    .nav-link::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out;
+    }
+
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+
+    /* Buttons */
+    .btn {
+        @apply px-6 py-2 rounded-lg transition-all duration-300 font-medium relative overflow-hidden;
+    }
+
+    .btn::before {
+        content: '';
+        @apply absolute inset-0 bg-black opacity-0 transition-opacity duration-300;
+    }
+
+    .btn:hover::before {
+        @apply opacity-10;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium 
+        text-white dark:text-white
+        bg-primary dark:bg-primary/90 rounded-full
+        shadow-sm hover:shadow-lg hover:bg-primary/90 dark:hover:bg-primary 
+        transform hover:-translate-y-0.5 
+        transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+    }
+
+    /* Cards */
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-lg p-6 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-xl;
+        transform: translateY(-4px) translateZ(0);
+    }
+
+    .card i {
+        @apply text-primary;
+    }
+
+    .card i.fas {
+        @apply text-primary;
+    }
+
+    /* Icons */
+    .icon-primary {
+        @apply text-primary;
+    }
+
+    /* Section Titles */
+    .section-title {
+        @apply text-3xl font-bold text-black dark:text-white mb-8 relative;
+        opacity: 0;
+        animation: slideDownFade 0.6s ease-out forwards;
+    }
+
+    .section-title::after {
+        content: '';
+        @apply block w-20 h-1 bg-primary mt-4 transition-all duration-500 ease-out;
+    }
+
+    .section-title:hover::after {
+        @apply w-32;
+    }
+
+    /* Timeline */
+    .timeline-item {
+        @apply relative pl-8 pb-8 border-l-2 border-primary;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideUpFade 0.6s ease-out forwards;
+    }
+
+    .timeline-item::before {
+        content: '';
+        @apply absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
+    }
+
+    .timeline-item:hover::before {
+        @apply scale-125 shadow-lg;
+        transform: scale(1.25) translateZ(0);
+    }
+
+    /* Profile Image */
+    .profile-image-container {
+        @apply relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden ring-4 ring-primary transition-all duration-300;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-image-container img {
+        @apply w-full h-full object-cover transition-transform duration-700 ease-out;
+        transform: scale(1.1);
+        object-position: 50% 50%;  /* Centered position */
+    }
+
+    .profile-image-container:hover {
+        @apply ring-8 transform scale-105;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-image-container:hover img {
+        transform: scale(1.2);
+    }
+
+    .profile-image {
+        @apply rounded-full;
+    }
+
+    /* Blog Search */
+    .search-input {
+        @apply transition-all duration-300 ease-out rounded-lg;
+    }
+
+    .search-input:focus {
+        @apply ring-2 ring-primary dark:ring-primary ring-opacity-50 transform scale-[1.02];
+    }
+
+    /* Form Inputs */
+    .form-input {
+        @apply transition-all duration-200 ease-out rounded-lg text-gray-800 dark:text-white;
+    }
+
+    .form-input:focus {
+        @apply ring-2 ring-primary dark:ring-primary ring-opacity-50 transform scale-[1.01] border-primary dark:border-primary outline-none;
+    }
+
+    .form-input::placeholder {
+        @apply text-gray-400 dark:text-gray-500;
+    }
+
+    /* Social Icons */
+.social-icon {
+    @apply text-primary hover:opacity-80 transition-colors duration-200;
+}
+
+.social-icon:hover {
+    @apply transform scale-110;
+}
+
+/* Desktop Social Icons (overlay on profile) */
+.social-icon-overlay {
+    @apply w-10 h-10 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center 
+           shadow-lg backdrop-blur-sm border border-gray-200 dark:border-gray-700
+           hover:bg-white dark:hover:bg-gray-800 hover:scale-110 hover:shadow-xl
+           transition-all duration-300 ease-out;
+}
+
+.social-icon-overlay:hover {
+    @apply text-primary dark:text-primary;
+}
+
+/* Mobile Social Icons (below profile) */
+.social-icon-mobile {
+    @apply w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center
+           hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-110 hover:text-primary dark:hover:text-primary
+           transition-all duration-300 ease-out shadow-sm hover:shadow-md;
+}
+
+    /* Mobile Menu */
+    #mobile-menu {
+        @apply transition-opacity duration-300 ease-in-out;
+    }
+
+    #mobile-menu.hidden {
+        @apply opacity-0;
+    }
+
+    #mobile-menu:not(.hidden) {
+        @apply opacity-100;
+    }
+
+    #mobile-menu .social-icon {
+        @apply transform transition-transform duration-300;
+    }
+
+    #mobile-menu .social-icon:hover {
+        @apply scale-110;
+    }
+
+    /* Theme toggle transitions */
+    #theme-toggle,
+    #mobile-theme-toggle {
+        @apply relative transition-all duration-300;
+    }
+
+    #theme-toggle:hover,
+    #mobile-theme-toggle:hover {
+        @apply transform scale-105;
+    }
+
+    /* Desktop theme toggle */
+    #theme-toggle .fa-sun {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    #theme-toggle .fa-moon {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    .dark #theme-toggle .fa-sun {
+        @apply opacity-50;
+    }
+
+    .dark #theme-toggle .fa-moon {
+        @apply opacity-100;
+    }
+
+    #theme-toggle .fa-sun {
+        @apply opacity-100;
+    }
+
+    #theme-toggle .fa-moon {
+        @apply opacity-50;
+    }
+
+    /* Mobile theme toggle */
+    #mobile-theme-toggle .fa-sun {
+        @apply absolute left-2 transition-all duration-300 ease-out;
+    }
+
+    #mobile-theme-toggle .fa-moon {
+        @apply absolute right-2 transition-all duration-300 ease-out;
+    }
+
+    .dark #mobile-theme-toggle .fa-sun {
+        @apply opacity-50 rotate-180 scale-0;
+    }
+
+    .dark #mobile-theme-toggle .fa-moon {
+        @apply opacity-100 rotate-0 scale-100;
+    }
+
+    #mobile-theme-toggle .fa-sun {
+        @apply opacity-100 rotate-0 scale-100;
+    }
+
+    #mobile-theme-toggle .fa-moon {
+        @apply opacity-50 rotate-180 scale-0;
+    }
+
+    /* Desktop social icons */
+    .hidden.md\:flex .social-icon {
+        @apply transition-transform duration-300;
+    }
+
+    .hidden.md\:flex .social-icon:hover {
+        @apply transform scale-110;
+    }
+
+    /* Mobile social icons */
+    #mobile-menu .social-icon {
+        @apply p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300;
+    }
+
+    #mobile-menu .social-icon:hover {
+        @apply transform scale-110;
+    }
+}
+
+/* Grid System */
+.grid-auto-fit {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    @apply scroll-pt-20;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline styles */
+.timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary dark:border-primary transition-all duration-300;
+}
+
+.timeline-item::before {
+    content: '';
+    @apply absolute w-4 h-4 bg-primary dark:bg-primary rounded-full -left-[9px] top-0 transition-all duration-300;
+}
+
+.timeline-item:hover::before {
+    @apply scale-125 shadow-lg;
+}
+
+/* Project card hover effect */
+.project-card {
+    @apply relative overflow-hidden;
+}
+
+.project-card-content {
+    @apply transform transition-all duration-300;
+}
+
+.project-card:hover .project-card-content {
+    @apply -translate-y-1;
+}
+
+/* Blog post hover effect */
+.blog-post-card {
+    @apply transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-700;
+}
+
+/* Contact form loading state */
+.btn-loading {
+    @apply relative text-transparent;
+}
+
+.btn-loading::after {
+    content: '';
+    @apply absolute inset-0 m-auto w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Theme Transition */
+.theme-transition {
+    @apply transition-all duration-300 ease-out;
+}
+
+/* Theme Toggle */
+#theme-toggle .fa-sun {
+    @apply scale-100 opacity-100 text-orange-400 transition-all duration-300;
+}
+
+#theme-toggle .fa-sun:is(.dark *) {
+    @apply scale-90 opacity-40 text-gray-500;
+}
+
+#theme-toggle .fa-moon {
+    @apply scale-90 opacity-40 text-gray-500 transition-all duration-300;
+}
+
+#theme-toggle .fa-moon:is(.dark *) {
+    @apply scale-100 opacity-100 text-purple-400;
+}
+
+/* Loading Skeleton */
+.skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+} 

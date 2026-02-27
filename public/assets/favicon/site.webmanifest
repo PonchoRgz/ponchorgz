@@ -1,0 +1,16 @@
+{
+    "name": "Poncho Rodríguez",
+    "short_name": "Poncho Rodríguez",
+    "description": "Personal website of Poncho Rodríguez",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#808000",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💼</text></svg>",
+            "type": "image/svg+xml",
+            "sizes": "150x150"
+        }
+    ]
+} 
